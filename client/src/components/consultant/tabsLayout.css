@@ -1,0 +1,9 @@
+#border{
+    border: 2px solid #ffffff ;
+    background-color: #4dc9f6;
+    border-radius: 8px;
+}
+#menu-border{
+    background-color: white;
+    border-radius: 8px;
+}

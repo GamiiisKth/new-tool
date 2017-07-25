@@ -1,71 +1,64 @@
-import React, {Component} from "react";
-import {NavLink} from "react-router-dom";
+import React from "react";
+import { NavLink, Route} from "react-router-dom";
 
+import Info from '../consultant/component/Info';
 require("./tabsLayout.css");
-export default class ConsultantNav extends Component {
-    render() {
-        const {location} = this.props;
-        const infoClass = location.pathname.match("/consultant/info")
-            ? "active"
-            : "";
-        const poDetailsClass = location.pathname.match("/consultant/poDetails")
-            ? "active"
-            : "";
-        const rfsClass = location.pathname.match("/consultant/rfs") ? "active" : "";
-        const rrClass = location.pathname.match("/consultant/rr") ? "active" : "";
-        const onOffBoardClass = location.pathname.match("/consultant/onOffBoard")
-            ? "active"
-            : "";
-        const workPermitClass = location.pathname.match("/consultant/workPermit")
-            ? "active"
-            : "";
 
-        return (
-            <div>
-                <ul className="nav nav-tabs tabs-3 transparent " role="tablist">
+ const containerStyle = { marginTop: "60px" };
 
-                    <li className="nav-item" id="border">
-                        <NavLink
-                            className="nav-link" to={"/consultant/info"} activeClassName={infoClass}>
-                            <i className="fa fa-info-circle"/> Info
-                        </NavLink>
-                    </li>
+const ConsultantNav = ({ match }) => {
+  
+    // Consultant/info
 
-                    <li className="nav-item" id="border">
-                        <NavLink className="nav-link" to={""} activeClassName={poDetailsClass}>
-                            <i className="fa fa-bar-chart"/> Po Details
-                        </NavLink>
-                    </li>
+  return <div>
+      <ul className="nav nav-tabs tabs-3 transparent " role="tablist">
+        <li className="nav-item" id="border">
+          <NavLink className="nav-link" to={"/consultant/info"} activeClassName={`${match.url}/info` ? "active" : ""}>
+            <i className="fa fa-info-circle" /> Info
+          </NavLink>
+        </li>
 
-                    <li className="nav-item" id="border">
-                        <NavLink className="nav-link" to={""} activeClassName={rfsClass}>
-                            <i className="fa fa-exchange"/> RFS
-                        </NavLink>
-                    </li>
-                    <li className="nav-item" id="border">
-                        <NavLink className="nav-link" to={""} activeClassName={rrClass}>
-                            <i className="fa fa-question-circle"/> RR
-                        </NavLink>
-                    </li>
+        <li className="nav-item" id="border">
+          <NavLink className="nav-link" to={"/consultant/podetails"} activeClassName={`${match.url}/podetails` ? "active" : ""}>
+            <i className="fa fa-bar-chart" /> Po Details
+          </NavLink>
+        </li>
 
-                    <li className="nav-item" id="border">
-                        <NavLink className="nav-link" to={""}
-                            activeClassName={onOffBoardClass}
-                        >
-                            <i className="fa fa-plane"/> ON/OFF board
-                        </NavLink>
-                    </li>
-                    <li className="nav-item" id="border">
-                        <NavLink
-                            className="nav-link"
-                            to={""}
-                            activeClassName={workPermitClass}
-                        >
-                            <i className="fa fa-firefox"/> Work premit
-                        </NavLink>
-                    </li>
-                </ul>
-            </div>
-        );
-    }
-}
+        <li className="nav-item" id="border">
+          <NavLink className="nav-link" to={"/consultant/rfs"} activeClassName={`${match.url}/rfs` ? "active" : ""}>
+            <i className="fa fa-exchange" /> RFS
+          </NavLink>
+        </li>
+        <li className="nav-item" id="border">
+          <NavLink className="nav-link" to={"/consultant/rr"} activeClassName={`${match.url}/rr` ? "active" : ""}>
+            <i className="fa fa-question-circle" /> RR
+          </NavLink>
+        </li>
+
+        <li className="nav-item" id="border">
+          <NavLink className="nav-link" to={"/consultant/onoffboard"} activeClassName={`${match.url}/onoffboard` ? "active" : ""}>
+            <i className="fa fa-plane" /> ON/OFF board
+          </NavLink>
+        </li>
+        <li className="nav-item" id="border">
+          <NavLink className="nav-link" to={"/consultant/workpremit"} activeClassName={`${match.url}/workpremit` ? "active" : ""}>
+            <i className="fa fa-firefox" /> Work premit
+          </NavLink>
+        </li>
+      </ul>
+
+      {/* fix the layout here instead**/}
+
+      <div className="row" style={containerStyle}>
+        <div className="col-lg-12">
+          <Route exact path={`${match.url}/info`} component={Info} />
+          <Route exact path={`${match.url}/podetails`} component={Info} />
+          <Route exact path={`${match.url}/rfs`} component={Info} />
+          <Route exact path={`${match.url}/rr`} component={Info} />
+          <Route exact path={`${match.url}/onoffboard`} component={Info} />
+          <Route exact path={`${match.url}/workpremit`} component={Info} />
+        </div>
+      </div>
+    </div>;
+};
+export default ConsultantNav;

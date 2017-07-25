@@ -5,3 +5,5 @@ export default class Info extends React.Component {
     return <h1>hej</h1>;
   }
 }
+
+

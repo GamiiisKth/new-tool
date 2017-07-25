@@ -1,5 +1,5 @@
 const componentsRoutes = {
-  "/": "Dashboard",
+  ",/": "Dashboard",
   "/components": "Components",
   "/charts": "Charts",
   "/components/buttons": "Buttons",
@@ -14,7 +14,12 @@ const componentsRoutes = {
   "/icons/simple-line-icons": "Simple Line Icons",
   "/widgets": "Widgets",
   "/logout": "Logout",
-  "/consultant": "ConsultantLayout",
-  "/consultant/info": "Info"
+  "/consultant": "Consultant",
+  "/consultant/info": "Info",
+  "/consultant/podetails": "podetails",
+  "/consultant/rfs": "rfs",
+  "/consultant/rr": "rr",
+  "/consultant/onoffboard": "onoffboard",
+  "/consultant/workpremit": "workpremit"
 };
 export default componentsRoutes;

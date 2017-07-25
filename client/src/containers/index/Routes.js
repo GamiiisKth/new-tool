@@ -14,11 +14,10 @@ import { Link, Switch, Route, Redirect } from "react-router-dom";
 import LoginPage from "../authentication/LoginPage";
 import SignUpPage from "../authentication/SignUpPage";
 import Logout from "../authentication/Logout";
-import Info from "../../components/consultant/component/Info";
 
 // import all provided state here
 import providedState from "./../../modules/ProvidedState";
-import ConsultantLayout from "../../components/consultant/ConsultantLayout";
+import ConsultantComponentRoutes from '../../components/consultant/ConsultantComponentRoutes';
 
 export default class Routes extends React.Component {
   render() {
@@ -36,10 +35,8 @@ export default class Routes extends React.Component {
                     <Route path="/dashboard" name="Dashboard" component={Dashboard} />
                     <Route path="/logout" name="Logout" component={Logout} />
 
-                    <Route path="/consultant" name="Consultant" component={ConsultantLayout}>
-                    <Route path="/consultant/info" name="Info" component={Info} />
-                    </Route>
-                    
+                     {ConsultantComponentRoutes}
+
                     <Redirect exact from="/" to="/dashboard" />
                   </Switch>
                 </div>

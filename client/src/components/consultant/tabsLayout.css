@@ -1,9 +1,15 @@
-#border{
-    border: 2px solid #ffffff ;
-    background-color: #4dc9f6;
-    border-radius: 8px;
+#border {
+	border: 2px solid #ffffff;
+	background-color: #4dc9f6;
+	border-radius: 8px;
 }
-#menu-border{
-    background-color: white;
-    border-radius: 8px;
+#menu-border {
+	background-color: white;
+	border-radius: 8px;
+}
+
+#cardborder {
+	background-color: #ffffff;
+	border-color: #333;
+	border-width: 2px;
 }

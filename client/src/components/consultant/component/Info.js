@@ -9,7 +9,7 @@ const Info = ({ onSubmit, OnChange, errors, successMessage, user }) => (
 				<form action="" method="post" id="formborder">
 					<div className="form-group">
 						<div className="input-group input-group-sm">
-							<label for="inputInfo" class="col-sm-2 col-form-label col-form-label-sm">
+							<label htmlFor="inputInfo" className="col-sm-2 col-form-label col-form-label-sm">
 								User Name
 							</label>
 							<input type="text" id="inputInfo" name="username3" className="form-control" />

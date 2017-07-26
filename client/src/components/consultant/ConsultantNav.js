@@ -10,8 +10,8 @@ const ConsultantNav = ({ match }) => {
 
 	return (
 		<div>
-			<div class="card text-center">
-				<div class="card-header">
+			<div className="card text-center">
+				<div className="card-header">
 					<ul className="nav nav-tabs tabs-3 transparent " role="tablist">
 						<li className="nav-item" id="border">
 							<NavLink className="nav-link" to={'/consultant/info'} activeClassName={`${match.url}/info` ? 'active' : ''}>

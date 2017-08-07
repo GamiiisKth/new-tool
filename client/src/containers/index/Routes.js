@@ -14,10 +14,11 @@ import { Link, Switch, Route, Redirect } from 'react-router-dom';
 import LoginPage from '../authentication/LoginPage';
 import SignUpPage from '../authentication/SignUpPage';
 import Logout from '../authentication/Logout';
+import DynamicContentTable from '../../components/contracts/boardings/demo';
+import ConsultantNav from '../../components/consultant/ConsultantNav';
 
 // import all provided state here
 import providedState from './../../modules/ProvidedState';
-import ConsultantComponentRoutes from '../../components/consultant/ConsultantComponentRoutes';
 
 export default class Routes extends React.Component {
 	render() {
@@ -31,7 +32,15 @@ export default class Routes extends React.Component {
 							<Sidebar {...this.props} />
 							<main className="main">
 								<Breadcrumb />
-								<div className="container-fluid">{ConsultantComponentRoutes}</div>
+								<div className="container-fluid">
+									<Switch>
+										<Route path="/logout" name="Logout" component={Logout} />
+										<Route path="/dashboard" name="Dashboard" component={Dashboard} />
+										<Route path="/consultant" name="Consultant" component={ConsultantNav} />
+										<Route path="/boardings" name="boardings" component={DynamicContentTable} />
+										<Redirect exact from="/" to="/dashboard" />
+									</Switch>
+								</div>
 							</main>
 							<Aside />
 						</div>
